@@ -126,17 +126,20 @@ function Cart({ cart, setCart }) {
     }
 
     try {
-      const response = await fetch("http://localhost:5000/api/order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://food-delivery-app-5be2.onrender.com/api/order",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            customer: form,
+            items: cart,
+            total,
+          }),
         },
-        body: JSON.stringify({
-          customer: form,
-          items: cart,
-          total,
-        }),
-      });
+      );
 
       const data = await response.json();
 
@@ -146,11 +149,9 @@ function Cart({ cart, setCart }) {
 
       alert("Order successfully sent!");
 
-      // очистка корзины
       setCart([]);
       localStorage.removeItem("cart");
 
-      // очистка формы
       setForm({
         name: "",
         email: "",

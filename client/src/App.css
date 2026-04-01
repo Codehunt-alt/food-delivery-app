@@ -1,0 +1,400 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background: #f4f6f9;
+  color: #222;
+  box-sizing: border-box;
+}
+
+/* global box sizing */
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* App wrapper */
+.app {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Typography */
+h1, h2, h3 {
+  margin: 0 0 10px;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Nav */
+nav {
+  display: flex;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* Shops */
+.shops {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 160px;
+}
+
+.shops button {
+  padding: 10px 12px;
+  cursor: pointer;
+  border: none;
+  background: #2d3748;
+  color: #fff;
+  border-radius: 8px;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+.shops button:hover {
+  background: #4a5568;
+  transform: translateY(-1px);
+}
+
+/* Products */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  flex: 1;
+}
+
+/* Product card */
+.product-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: 0.2s;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+/* Product image */
+.product-image {
+  width: 180px;
+  height: 180px;
+ 
+  border-radius: 10px;
+  margin-bottom: 12px;
+}
+
+/* Product button */
+.product-card button {
+  margin-top: 12px;
+  padding: 8px 12px;
+  border: none;
+  background: #3182ce;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.product-card button:hover {
+  background: #2b6cb0;
+}
+
+/* Cart layout */
+.cart-page {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Panels */
+.cart-left,
+.cart-right {
+  width: 50%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+/* Form labels */
+.cart-left p {
+  margin: 10px 0 5px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Inputs */
+.cart-left input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: 0.2s;
+  font-size: 14px;
+}
+
+.cart-left input:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 2px rgba(49, 130, 206, 0.2);
+}
+
+/* Cart item */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+/* Cart image */
+.cart-image {
+  width: 80px;
+  height: 80px;
+  
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+/* Cart item content */
+.cart-item > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+/* row layout for price + select */
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* label (p) fix */
+.cart-item-row p {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 14px;
+}
+
+/* Select */
+select {
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Buttons base */
+button {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* ✅ Remove button FIX */
+.cart-item button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background: #e53e3e;
+  color: white;
+  font-size: 13px;
+  width: auto;              /* ❗ убрали растяжение */
+  align-self: flex-start;   /* ❗ не растягивается */
+}
+
+.cart-item button:hover {
+  background: #c53030;
+}
+
+/* Submit button FIX */
+.submit-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #38a169;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  cursor: pointer;
+
+  width: fit-content;       /* ❗ не на всю ширину */
+  align-self: flex-end;     /* ❗ прижимаем вправо */
+}
+
+.submit-btn:hover {
+  background: #2f855a;
+}
+
+/* Total */
+.cart-right h2 {
+  margin-top: 20px;
+  align-self: flex-end;
+}
+
+/* Notification */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #38a169;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 1000;
+  animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(-10px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-10px); }
+}
+
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* remove button styling */
+.remove-btn {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background: #e53e3e;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+  width: auto;
+}
+
+
+
+/* ===================== */
+/* 📱 MOBILE */
+/* ===================== */
+@media (max-width: 575px) {
+  body {
+    padding: 12px;
+  }
+
+  .container {
+    flex-direction: column;
+  }
+
+  .shops {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .shops button {
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .cart-page {
+    flex-direction: column;
+  }
+
+  .cart-left,
+  .cart-right {
+    width: 100%;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-row {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .product-image {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+/* ===================== */
+/* 📱 TABLET */
+/* ===================== */
+@media (max-width: 992px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .cart-page {
+    flex-direction: column;
+  }
+
+  .cart-left,
+  .cart-right {
+    width: 100%;
+  }
+
+  .shops {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+/* ===================== */
+/* 💻 DESKTOP */
+/* ===================== */
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+  }
+
+  .cart-page {
+    flex-direction: row;
+  }
+}
